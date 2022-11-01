@@ -9,12 +9,7 @@ Parameters:
     dataSet - 整理的样本数据集
 Returns:
     vocabSet - 返回不重复的词条列表，也就是词汇表
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-11
+
 """
 def createVocabList(dataSet):
     vocabSet = set([])                      #创建一个空的不重复列表
@@ -30,12 +25,7 @@ Parameters:
     inputSet - 切分的词条列表
 Returns:
     returnVec - 文档向量,词集模型
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-11
+
 """
 def setOfWords2Vec(vocabList, inputSet):
     returnVec = [0] * len(vocabList)                                    #创建一个其中所含元素都为0的向量
@@ -54,12 +44,7 @@ Parameters:
     inputSet - 切分的词条列表
 Returns:
     returnVec - 文档向量,词袋模型
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-14
+
 """
 def bagOfWords2VecMN(vocabList, inputSet):
     returnVec = [0]*len(vocabList)                                        #创建一个其中所含元素都为0的向量
@@ -78,12 +63,7 @@ Returns:
     p0Vect - 非侮辱类的条件概率数组
     p1Vect - 侮辱类的条件概率数组
     pAbusive - 文档属于侮辱类的概率
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-12
+
 """
 def trainNB0(trainMatrix,trainCategory):
     numTrainDocs = len(trainMatrix)                            #计算训练的文档数目
@@ -113,12 +93,7 @@ Parameters:
 Returns:
     0 - 属于非侮辱类
     1 - 属于侮辱类
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-12
+
 """
 def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1):
     p1 = sum(vec2Classify * p1Vec) + np.log(pClass1)        #对应元素相乘。logA * B = logA + logB，所以这里加上log(pClass1)
@@ -135,12 +110,7 @@ Parameters:
     无
 Returns:
     无
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-14
+
 """
 def textParse(bigString):                                                   #将字符串转换为字符列表
     listOfTokens = re.split(r'\W+', bigString)                              #将特殊符号作为切分标志进行字符串切分，即非字母、非数字
@@ -153,12 +123,7 @@ Parameters:
     无
 Returns:
     无
-Author:
-    Jack Cui
-Blog:
-    http://blog.csdn.net/c406495762
-Modify:
-    2017-08-14
+
 """
 def spamTest():
     docList = []; classList = []; fullText = []
